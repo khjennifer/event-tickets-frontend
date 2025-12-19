@@ -24,8 +24,10 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Build
+      - name: Build (with Vite env)
         run: npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
 
   deploy:
     name: Deploy (Upload dist + reload nginx)
@@ -46,8 +48,10 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Build
+      - name: Build (with Vite env)
         run: npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
 
       # Upload dist/ to EC2
       - name: Upload dist to EC2
