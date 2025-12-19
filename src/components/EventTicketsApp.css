@@ -1,0 +1,117 @@
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #0f172a, #1e293b, #0f172a);
+  padding: 2rem 1rem;
+}
+
+.app-header {
+  max-width: 1280px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(96, 165, 250, 0.1));
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(to right, #4ade80, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.message {
+  max-width: 1280px;
+  margin: 0 auto 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.message.error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.app-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 2rem;
+}
+
+.booking-section,
+.tickets-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.booking-section h2,
+.tickets-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin: 0 0 1.5rem 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  .app-header {
+    margin-bottom: 2rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.875rem;
+  }
+
+  .app-header p {
+    font-size: 1rem;
+  }
+}
